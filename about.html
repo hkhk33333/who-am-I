@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who am I?</title>
+</head>
+<body>
+    <header>
+        <h1>Who am I?</h1>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="project.html"><i class="fas fa-briefcase"></i> Projects</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+        Hey, I am Hakkei~ If you do not know me and found this website, that is very surprising. To be clear, I am not sure who I am either. But here are four words to start:  
+        Bird, Statue of David, Leonardo da Vinci, Buddha. These are the four role models I care about, the direction of my life.
+        </p>
+        
+        <h3>Bird</h3>
+        <p>
+        Bird represents my social life: I care about being in a community with a strong sense of connection. Like birds flock together, I love hanging out with people.  
+        I am very spontaneous.
+        </p>
+        
+        <h3>Statue of David</h3>
+        <p>
+        The Statue of David represents my physical life: Just like the Statue of David, I want to maintain the aesthetics of my body but also treat it in a healthy way for the long term. This includes eating certain foods, exercising regularly (mainly calisthenics), and getting quality sleep.
+        </p>
+        
+        <h3>Leonardo da Vinci</h3>
+        <p>
+        Leonardo da Vinci represents my academic life: I love learning because I am curious. Period. That is the only reason I learn. Especially interdisciplinary subjects, but not just scratching the surface of each, rather diving deeper and connecting them. Like da Vinci, I want to approach every opportunity for learning from a course of curiosity and create something useful out of it by connecting disciplines.
+        </p>
+        
+        <h3>Buddha</h3>
+        <p>
+        Buddha represents my mental life: Having peace within myself is crucial. Besides that, there is not much I can do or a point in doing anything. I deeply care about the practice of meditation and self-reflection. This comes in the form of relaxing, staying peaceful, and observing myself through the art of journaling.
+        </p>        
+        
+        
+
+
+
+
+       
+    </section>
+
+    
+
+    <section id="details">
+        <div class="card">
+            <h3>Who I Am</h3>
+            <p>
+                ...
+            </p>
+        </div>
+        <div class="card">
+            <h3>What I Do</h3>
+            <p>
+                ...
+            </p>
+        </div>
+        <div class="card">
+            <h3>My Vision</h3>
+            <p>
+                ...
+            </p>
+        </div>
+    </section>
+
+    <script>
+        // Select the header element
+        const header = document.querySelector('header');
+
+        // Track the scroll position
+        let lastScrollY = window.scrollY;
+
+        // Add scroll event listener
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY) {
+                // If scrolling down, hide the header
+                header.classList.add('hidden');
+            } else {
+                // If scrolling up, show the header
+                header.classList.remove('hidden');
+            }
+            lastScrollY = window.scrollY; // Update the last scroll position
+        });
+    </script>
+</body>
+</html>

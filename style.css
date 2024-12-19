@@ -1,0 +1,439 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #545353, #242323); /* Dark gradient */
+    text-align: center;
+    color: #FFFFFF; /* White text for readability */
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+/* Full-screen container for the transition image */
+#image-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Black background */
+    z-index: 9999; /* Ensure it's on top of all content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* Image inside the transition container */
+#image-transition img {
+    width: 100vw;
+    height: 80vh;
+    object-fit: cover;
+    opacity: 1;
+    animation: fadeOutImage 2s forwards 5s; /* Delay the fade-out by 5 seconds */
+}
+
+@keyframes fadeOutImage {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.1); /* Slightly zoom out */
+    }
+}
+
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.1); /* Slightly zoomed-in */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Original size */
+    }
+}
+
+/* Fade-out animation */
+
+
+
+#image-transition.fade-out {
+    animation: fadeOutContainer 1s forwards 8s; /* Delay the fade-out by 8 seconds */
+}
+
+@keyframes fadeOutContainer {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+#image-transition h1 {
+    position: absolute;
+    color: white;
+    font-size: 2em;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+/* Full-screen container for the transition */
+#image-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Background color behind the image */
+    z-index: 9999; /* Ensure it appears above all content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Image inside the transition container */
+#image-transition img {
+    width: 100%;
+    max-width: 600px;
+    opacity: 1; /* Start visible */
+    animation: fadeOutImage 2s forwards; /* Fade out the image */
+}
+
+/* Fade-out animation for the image */
+@keyframes fadeOutImage {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.1); /* Slightly zoom out */
+    }
+}
+
+/* Text inside the transition container */
+#transition-text {
+    color: white;
+    font-size: 2em;
+    opacity: 0; /* Start invisible */
+    margin-top: 20px;
+    animation: fadeInText 2s forwards 2s; /* Fade in the text after the image fades out */
+}
+
+/* Fade-in animation for the text */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start slightly below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Settle in place */
+    }
+}
+
+/* Fade-out animation for the entire transition container */
+#image-transition.fade-out {
+    animation: fadeOutContainer 1s forwards;
+}
+
+@keyframes fadeOutContainer {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Header */
+header {
+    position: fixed; /* Make the header fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Add a background color */
+    color: white;
+    padding: 10px 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    transition: transform 0.3s ease; /* Smooth slide-out effect */
+}
+
+/* Class to hide the header */
+header.hidden {
+    transform: translateY(-100%); /* Slide header up and hide it */
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #ff7e5f;
+}
+
+/* About Section */
+section#about {
+    margin-top: 100px; /* Space between header and section */
+    padding: 20px; /* Optional: Add padding inside the section */
+    background-color: #f9f9f9; /* Optional: Add a background color */
+    border-radius: 10px; /* Optional: Make the section look nicer */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+    max-width: 800px; /* Optional: Limit the width of the section */
+    margin-left: auto; /* Center align horizontally */
+    margin-right: auto;
+}
+
+
+
+section#about h2 {
+    font-size: 2em;
+    color: #000000;
+}
+
+section#about p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+section#about img {
+    margin-top: 15px;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+/* Projects Section */
+section#projects {
+    padding: 20px;
+    background-color: #000000; /* Beige color */
+    text-align: center;
+}
+section#projects h2 {
+    font-size: 2em;
+    color: #444;
+}
+
+.project-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    
+    background: linear-gradient(to bottom right, #ffffff, #bbb8b8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 250px;
+    text-align: left;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.project-card p {
+    color: #666;
+}
+
+/* Contact Section */
+section#contact {
+    padding: 20px;
+    
+    background: linear-gradient(to bottom, #333, #000000);
+    
+    text-align: center;
+}
+
+section#contact a {
+    color: #ff7e5f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Section Animation */
+section {
+    margin-top: 100px; /* Push content below the header */
+    padding: 20px;
+}
+
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+section#about {
+    
+    padding: 20px;
+    background-color:#020502;
+    color: #333;
+    text-align: left;
+    max-width: 800px;
+    margin-top: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+section#secret{
+    padding: 20px;
+    background-color:#000000;
+    background: #000000;
+   
+    text-align: left;
+    max-width: 800px;
+    margin-top: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
+}
+
+section#about h2, section#about h3 {
+    font-size: 2em;
+    color: #444;
+}
+
+section#about p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #b1b1b1;
+}
+
+section#about ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+section#about img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+    max-width: 200px;
+}
+
+
+section#about h3 {
+    position: relative;
+}
+
+section#about h3::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    background: #ff7e5f;
+    margin: 10px auto;
+}
+#hero {
+    background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+#hero .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.5em;
+    line-height: 1.6;
+}
+
+#details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+#details .card {
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+}
+
+#details .card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#details .card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+
+#parrot-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #000000, #000000); /* Background */
+}
+
+svg {
+    width: 80%;
+    height: auto;
+}
+
+#parrot-head, #parrot-wing, #parrot-tail {
+    cursor: pointer;
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+#parrot-head:hover, #parrot-wing:hover, #parrot-tail:hover {
+    
+    transform: scale(1.05);
+}

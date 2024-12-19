@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What I do </title>
+</head>
+<body>
+    <header>
+        <h1>What I do</h1>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-user"></i> About</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+    </header>
+
+    <section id="projects">
+        <h2>What I do</h2>
+        <div class="project-list">
+            <div class="project-card">
+                <h3>Project 1</h3>
+                <p>A brief description of your first project. Add details here.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project 2</h3>
+                <p>A brief description of your second project. Add details here.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project 3</h3>
+                <p>A brief description of your third project. Add details here.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Select the header element
+        const header = document.querySelector('header');
+
+        // Track the scroll position
+        let lastScrollY = window.scrollY;
+
+        // Add scroll event listener
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY) {
+                // If scrolling down, hide the header
+                header.classList.add('hidden');
+            } else {
+                // If scrolling up, show the header
+                header.classList.remove('hidden');
+            }
+            lastScrollY = window.scrollY; // Update the last scroll position
+        });
+    </script>
+</body>
+</html>
